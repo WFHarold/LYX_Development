@@ -1,0 +1,243 @@
+/* Reset + font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: url('IMG-20250731-WA0023.jpg') no-repeat center center/cover;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 2rem;
+  background: transparent;
+  backdrop-filter: blur(50px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo span {
+  font-weight: 300;
+  color: #ffb200;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin-bottom: 5px;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  color: #fff;
+  background: ;
+  border: 2px solid #fff;
+}
+
+.btn {
+  background: #ffa500;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* BURGER MENU */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  gap: 5px;
+  display: block;
+  margin-right: 20px;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* HERO */
+.hero {
+  margin-top: 80px;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #525252;
+}
+ .hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* TEAM SLIDER */
+.team-slider {
+  padding: 80px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.team-slider h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  flex: 0 0 auto;
+  background: #111;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
+  min-width: 180px; 
+  padding: 15px;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+}
+
+.slide img {
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  height: 200px; 
+  width: 100%;
+  object-fit: cover;
+}
+
+.slide h3 {
+  color: #ff9900;
+  margin-bottom: 10px;
+}
+
+.slide p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* RESPONSIVE, ne touche pas ça. ça marche très bien*/
+/* <= 768px */
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    display: none;
+    padding: 1rem 0;
+    gap: 0;
+    z-index: 998;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-menu li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-menu li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1.5rem;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+/* <= 480px */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .team-slider h2 {
+    font-size: 1.5rem;
+  }
+
+  .slide {
+    min-width: 200px;
+  }
+}
+
+/* Animation burger icon when active */
+.navbar-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
