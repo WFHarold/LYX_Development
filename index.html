@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LYX Community</title>
+  <link rel="stylesheet" href="style TP 1.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <strong>LYX</strong> <span>Community</span>
+    </div>
+    <button class="navbar-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <ul class="navbar-menu">
+      <li><a href="#" class="active">Accueil</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="projets html">Projets</a></li>
+      <li><a href="login.html" class="btn">connexion</a></li>
+      <li><a href="inscription.html" class="btn">inscription</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <h1>Bienvenue chez LYX Developer Community</h1>
+    <p>Nous proposons de nombreux services digitaux telles que le développement web front-end, développement web full-stack. Professionnalisme, créativité et prix imbattables.</p>
+  </section>
+
+  <section class="team-slider">
+<h2>Notre Équipe</h2>
+    <div class="slider-container">
+      <div class="slide">
+        <img src="IMG-20250720-WA0002.jpg" alt="Harold" />
+        <h3>Harold</h3>
+        <p>Développeur web front-end passionné et créatif.</p>
+      </div>
+      <div class="slide">
+        <img src="IMG_20250707_234258248.jpg" alt="Nathalie" />
+        <h3>Nathalie</h3>
+        <p>Designer graphique inspirée et à l'écoute.</p>
+      </div>
+      <div class="slide">
+        <img src="IMG-20250708-WA0025.jpg" alt="Maurice" />
+        <h3>Maurice</h3>
+        <p>Monteur vidéo expert en storytelling visuel.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.querySelector('.navbar-toggle');
+    const menu = document.querySelector('.navbar-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      toggleBtn.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
